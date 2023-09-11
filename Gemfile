@@ -74,5 +74,5 @@ group :test do
 end
 
 gem 'devise'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: %i[development test]
 gem 'letter_opener', group: :development
