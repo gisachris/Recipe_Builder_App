@@ -93,7 +93,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd rails-blog-app
+  cd recipe-app
   bundle install
 ```
 
