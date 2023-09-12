@@ -1,0 +1,32 @@
+.nav_logged_in {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(24, 32, 32);
+  justify-content: space-between;
+  box-shadow: 2px 2px 6px black;
+}
+
+.navigation {
+  width: 40%;
+  text-align: right;
+  align-self: center;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_action {
+  margin-right: 15px;
+  padding: 0 3px;
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+.nav_action:hover {
+  border-bottom: 2px solid white;
+}
+
+a {
+  text-decoration: none;
+}
