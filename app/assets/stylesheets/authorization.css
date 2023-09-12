@@ -7,8 +7,9 @@
 }
 
 .recipe_logo {
-  width: 90px;
-  height: 80px;
+  align-self: center;
+  width: 60px;
+  height: 55px;
   aspect-ratio: 1/1;
   margin: 10px;
 }

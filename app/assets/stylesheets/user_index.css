@@ -1,0 +1,43 @@
+.user_page_image_holder {
+  width: 100%;
+  height: 40vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 2px 2px 5px black;
+}
+
+.user_page_image {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+}
+
+.user_text_section {
+  border: 2px solid #b1b1b1;
+  border-radius: 7px;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.user_index_title {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+
+.Instructions_section {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.instructions_title {
+  margin-left: 20px;
+  padding: 0 6px;
+  text-decoration: underline;
+}
+
+.Instructions_list > li {
+  font-size: 1.2rem;
+}

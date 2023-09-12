@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root 'users#index'
   devise_for :users
 
-  resources :users
-  resources :recipes
-  resources :foods
-  resources :recipe_foods
+  resources :users do
+  resources :recipes, except: :update
+  resources :foods, except: :update
+  resources :shopping_list, only: :index
+  end
 end

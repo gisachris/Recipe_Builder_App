@@ -1,2 +1,15 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class='user_page_image_holder'>
+  <%= image_tag 'user_page_image.jpg', class:'user_page_image'%>
+</div>
+<section class='user_text_section'>
+  <h2 class='user_index_title'>Welcome <%= @user.name%>!</h2>
+  <section class='Instructions_section'>
+    <h2 class='instructions_title'>Simple Guide</h2>
+    <div class='instructions_holder'>
+      <ul type=1 class = 'Instructions_list'>
+      <li>Start with creating a list of foods. 🥗</li>
+      <li>After Listing some Foods Create a recipe! 📜</li>
+      </ul>
+    </div>
+  </section>
+</section>
