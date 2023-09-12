@@ -5,14 +5,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="shortcut icon" href="<%= asset_path('header_logo_favicon.ico') %>" type="image/x-icon">
+    <link rel="icon" href="<%= asset_path('header_logo_favicon.ico') %>" type="image/x-icon">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'authorization.css' %>
+
+    <% unless user_signed_in? %>
+     <style>
+        body {
+          background-color: #ededed;
+        }
+      </style>
+    <% end %>
   </head>
 
   <body>
+  <nav>
+    <% if user_signed_in?%>
+      <%= image_tag 'recipe_app_logo.png', alt:'recipe app logo', class:'recipe_logo'%>
+    <%else%>
+      <%= image_tag 'recipe_app_logo.png', alt:'recipe app logo', class:'recipe_logo_centered' %>
+    <%end%>
+  </nav>
+  <main>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+  </main>
+  <footer></footer>
   </body>
 </html>
