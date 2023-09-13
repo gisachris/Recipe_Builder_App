@@ -12,12 +12,16 @@
     <%= stylesheet_link_tag 'authorization.css' %>
     <%= stylesheet_link_tag 'navigation.css' %>
     <%= stylesheet_link_tag 'user_index.css' %>
+    <%= stylesheet_link_tag 'recipes_index.css' %>
+    <%= stylesheet_link_tag 'recipe_form.css' %>
   </head>
 
   <body>
     <% if user_signed_in?%>
       <nav class='nav_logged_in'>
-        <%= image_tag 'recipe_app_logo.png', alt:'recipe app logo', class:'recipe_logo'%>
+        <%= link_to users_path do %>
+          <%= image_tag 'recipe_app_logo.png', alt: 'recipe app logo', class: 'recipe_logo' %>
+        <% end %>      
         <%= render partial: 'shared/navigation', locals: { user: current_user } %>
       </nav>
     <%else%>
@@ -26,9 +30,21 @@
       </nav>
     <%end%>
     <main class="<%= user_signed_in? && request.path != users_path && request.path != root_path ? 'main_backed' : '' %>">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+      <% if user_signed_in? && request.path != users_path && request.path != root_path%>
+        <div class='outer_shell'>
+        </div>
+        <div class='inner_shell'>
+          <div class='data_hold'>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+          </div>
+        </div>
+      <% else %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      <% end %>
     </main>
   </body>
 </html>

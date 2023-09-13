@@ -1,0 +1,29 @@
+<h2 class='header_text new_recipe_header_text'>Create A New Recipe</h2>
+<span class='recipe_undeline_holder'>
+  <%= image_tag 'underline_image', class:'recipe_underline'%>
+</span>
+<%= form_with model: [@user, @recipe], url: user_recipes_path(@user), method: :post, class: 'recipe_entry_form' do |f|%>
+  <span class='entry'>
+    <%= f.label :Title %>
+    <%= f.text_field :name, class: 'recipe_field' %>
+  </span>
+
+  <span class='entry timing'>
+    <%= f.label 'preparation time(in hours)' %>
+    <%= f.number_field :preparation_time %>
+  </span>
+
+  <span class='entry timing'>
+    <%= f.label 'cooking time(in hours)' %>
+    <%= f.number_field :cooking_time %>
+  </span>
+
+  <span class='entry'>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </span>
+
+  <span class='new_recipe_button_hold'>
+    <%= f.submit 'Create Recipe', class: 'button new_recipe_submit_button' %>
+  </span>
+<% end %>
