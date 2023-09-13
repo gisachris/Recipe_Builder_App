@@ -2,19 +2,24 @@
 <div class='no-foods'>
 <%= "Food store empty currently." if @foods.empty?%>
 </div>
-<div class='add-food'>
-<%= link_to "Add food", new_user_food_path(@user), class: "btn btn-addfood button" %>
+<div class='heading'>
+  <h2 class='header_text new_recipe_header_text'>Food Stock</h2>
+  <span class='recipe_undeline_holder'>
+    <%= image_tag 'underline_image', class:'recipe_underline'%>
+  </span>
 </div>
+  <div class='add-food'>
+    <%= link_to "Add food", new_user_food_path(@user), class: "btn btn-addfood button" %>
+  </div>
 <table class = 'food-table'>
-<tr class = 'table-raw'>
-<th class = 'table-data'>Name</th>
-<th class = 'table-data'>Measurement Unit</th>
-<th class = 'table-data'>Price</th>
-<th class = 'table-data'>Quantity</th>
-<th></th>
-
-</tr>
-<% @foods.each do |food| %>
-<%= render partial: 'food', locals: {user: @user,food: food }%>
-<%end%>
+  <tr class = 'table-raw'>
+    <th class = 'table-data'>Name</th>
+    <th class = 'table-data'>Measurement Unit</th>
+    <th class = 'table-data'>Price</th>
+    <th class = 'table-data'>Quantity</th>
+    <th class = 'table_data'>Action</th>
+  </tr>
+  <% @foods.each do |food| %>
+    <%= render partial: 'food', locals: {user: @user,food: food }%>
+  <%end%>
 </table>
