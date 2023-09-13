@@ -1,0 +1,8 @@
+<h2 class='header_text new_recipe_header_text'>Public Recipes</h2>
+<span class='recipe_undeline_holder'>
+  <%= image_tag 'underline_image', class:'recipe_underline'%>
+</span>
+
+<% @public_recipes.each do |recipe| %>
+  <%= render partial: 'shared/recipe_details_v2', locals: {user:recipe.user,recipe: recipe}%>
+<% end %>
