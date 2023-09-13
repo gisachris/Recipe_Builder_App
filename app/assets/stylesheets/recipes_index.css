@@ -1,0 +1,32 @@
+.recipe_header_text {
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.recipe_undeline_holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.recipe_underline {
+  
+}
+
+.new_recipe_button_holder {}
+
+.new_recipe_button {}
+
+.recipe_holder {}
+
+.recipe_holder > .name_button_section {}
+
+.recipe_title {}
+
+.delete_recipe_button {}
+
+.recipe_holder > .description_section {}
+
+.recipe_description {}

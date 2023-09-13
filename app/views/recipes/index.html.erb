@@ -1,0 +1,16 @@
+<div class='outer_shell'>
+</div>
+<div class='inner_shell'>
+  <div class='data_hold'>
+    <h2 class='recipe_header_text'><%= @user.name%>'s Recipes</h2>
+    <span class='recipe_undeline_holder'>
+      <%= image_tag 'underline_image', class:'recipe_underline'%>
+    <span>
+    <span class='new_recipe_button_holder'>
+      <%= button_to 'New Recipe', new_user_recipe_path(@user), class:'new_recipe_button'%>
+    </span>
+    <% @recipes.each do |recipe| %>
+      <%= render partial: 'shared/recipe_details_v1', locals: {user: @user,recipe: recipe} %>
+    <% end %>
+  </div>
+</div>

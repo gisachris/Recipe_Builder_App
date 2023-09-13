@@ -1,0 +1,15 @@
+<a href="#{<%= user_recipe_path(user,recipe)%>}">
+<div class='recipe_holder'>
+  <section class='name_button_section'>
+    <h2 class='recipe_title'>
+      <%= recipe.name %>
+    </h2>
+    <%= button_to 'Remove', user_recipe_path(user,recipe), method: :delete, class:'button delete_recipe_button' %>
+  </section>
+  <section class='description_section'>
+    <p class='recipe_description'>
+      <%= recipe.description %>
+    </p>
+  </section>
+</div>
+</a>
