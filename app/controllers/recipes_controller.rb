@@ -4,8 +4,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.includes(:user).where(user: @user).references(:user)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @user = current_user
@@ -25,14 +24,14 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    if @recipe.destroy
-      redirect_to user_recipes_path(current_user)
-    end
+    return unless @recipe.destroy
+
+    redirect_to user_recipes_path(current_user)
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name,:preparation_time,:cooking_time,:description)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 end

@@ -49,8 +49,8 @@ main {
 }
 
 h2 {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .outer_shell {
@@ -84,7 +84,7 @@ h2 {
 .button {
   padding: 10px 15px;
   border-radius: 5px;
-  border: 0px;
+  border: 0;
   box-shadow: 2px 2px 3px black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
