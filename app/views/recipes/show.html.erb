@@ -8,14 +8,15 @@
 <p>cooking time:<%=@recipe.cooking_time%> </p>
 <p><%=@recipe.description%><p>
 </div>
-<div class='status'>
-<p>Status: <%= @recipe.public ? 'Public' : 'Private' %></p>
-
-<%= form_for @recipe, url: toggle_public_user_recipe_path(@user, @recipe), method: :patch do |f| %>
-  <%= f.hidden_field :public, value: !@recipe.public %>
-  <button type="submit" class="toggle-status-button" style="background-image: url('<%= asset_path(@recipe.public ? 'on-button.png' : 'off-button.png') %>');"></button>
+<% if @recipe.user == @user %>
+  <div class='status'>
+    <p>Status: <%= @recipe.public ? 'Public' : 'Private' %></p>
+    <%= form_for @recipe, url: toggle_public_user_recipe_path(@user, @recipe), method: :patch do |f| %>
+    <%= f.hidden_field :public, value: !@recipe.public %>
+    <button type="submit" class="toggle-status-button" style="background-image: url('<%= asset_path(@recipe.public ? 'on-button.png' : 'off-button.png') %>');"></button>
+    <% end %>
+  <div>
 <% end %>
-<div>
 
 </section>
 

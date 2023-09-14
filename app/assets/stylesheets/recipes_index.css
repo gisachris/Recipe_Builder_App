@@ -98,3 +98,24 @@
   background-color: rgba(214, 214, 214, 0.699);
   margin-right: 20px;
 }
+
+.recipe_owner {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  padding: 20px 0;
+}
+
+.public_totals_section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  width: 50%;
+  text-align: left;
+  justify-content: center;
+}
+
+.public_totals_section > span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}
