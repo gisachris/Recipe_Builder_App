@@ -1,0 +1,7 @@
+<h1>Edit Recipe Food Quantity</h1>
+<h4 class="">Current quantity value: <%= @recipe_food.quantity %></h4>
+<%= form_with model: @recipe_food, url: user_recipe_recipejointfood_path(@user, @recipe, @recipe_food), method: :put, local: true do |f| %>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, min: 0, class: 'form-control' %>
+    <%= f.submit 'Update food quantity', class: 'btn btn-primary' %>
+<% end %>
