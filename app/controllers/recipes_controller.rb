@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
     @foods = Food.all # Fetch a list of available foods (ingredients)
     @recipe_food = RecipeFood.new # Initialize a new RecipeFood object for the form
   end
-  
+
   private
 
   def recipe_params
