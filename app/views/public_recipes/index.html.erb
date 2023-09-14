@@ -4,5 +4,29 @@
 </span>
 
 <% @public_recipes.each do |recipe| %>
-  <%= render partial: 'shared/recipe_details_v2', locals: {user:recipe.user,recipe: recipe}%>
+  <div class='recipe_holder'>
+    <section class='name_button_section'>
+      <a href="<%= user_recipe_path(recipe.user, recipe) %>">
+        <h2 class='recipe_title'>
+          <%= recipe.name %>
+        </h2>
+      </a>
+      <h2 class='recipe_owner'>
+        By <%= recipe.user.name %>
+      </h2>
+    </section>
+    <section class='public_totals_section'>
+      <span class='total_food_items'>
+        Total food items: <%=recipe.recipe_foods.count%>
+      </span>
+      <span class='total_food_prices'>
+        Total Price:
+        <% total_price = 0 %>
+        <% recipe.recipe_foods.each do |recipe_food| %>
+        <% total_price += recipe_food.quantity * recipe_food.food.price %>
+        <% end %>
+        <%= total_price %>$
+      </span>
+    </section>
+  </div>
 <% end %>
