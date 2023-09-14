@@ -3,7 +3,7 @@
     <%= link_to 'Foods', user_foods_path(user), class: 'nav_action action_1'%>
     <%= link_to 'Public Recipes', users_path, class: 'nav_action action_1'%>
     <%= link_to 'Recipes', user_recipes_path(user), class: 'nav_action action_1'%>
-    <%= link_to 'Shopping List', user_shopping_list_index_path(user), class: 'nav_action action_1'%>
+    <%= link_to 'Shopping List', user_shopping_lists_path(user), class: 'nav_action action_1'%>
   </div>
   <%= link_to 'Sign Out', destroy_user_session_path,method: :delete, class: 'nav_action action_1 log_out'%>
 </section>
