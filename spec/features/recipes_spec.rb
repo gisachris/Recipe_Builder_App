@@ -31,13 +31,13 @@ RSpec.describe 'Recipes', type: :system do
 
   it 'I can see the recipes titles' do
     visit user_recipe_path(@user, @recipe1)
-      expect(page).to have_content(@recipe1.name)
-    end
+    expect(page).to have_content(@recipe1.name)
+  end
 
   it 'I can see the recipes descriptions' do
     visit user_recipe_path(@user, @recipe1)
-      expect(page).to have_content(@recipe1.description)
-    end
+    expect(page).to have_content(@recipe1.description)
+  end
 
   it 'When I click on a recipe, it takes me to the details' do
     visit user_recipes_path(@user)
