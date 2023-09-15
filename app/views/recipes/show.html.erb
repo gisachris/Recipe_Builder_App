@@ -23,12 +23,12 @@
 
 </section>
 
-<section class= 'recipe_show_link_buttons'>
-<%=link_to 'Generate Shopping list', user_shopping_lists_path, class: 'button btn-addfood'%>
 <%if @recipe.user == current_user%>
-<%=link_to 'Add ingredient', new_user_recipe_recipejointfood_path(@user, @recipe), class: 'button btn-addfood'%>
-<%end%>
-</section>
+  <section class= 'recipe_show_link_buttons'>
+    <%=link_to 'Generate Shopping list', user_shopping_lists_path, class: 'button btn-addfood'%>
+    <%=link_to 'Add ingredient', new_user_recipe_recipejointfood_path(@user, @recipe), class: 'button btn-addfood'%>
+  </section>
+<% end %>
 <section class= 'recipe-table-section'>
 <%if @recipe_foods.empty?%>
         <div class='recipe-show-none'>
