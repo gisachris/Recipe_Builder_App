@@ -56,3 +56,16 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
+
+.ingredient_warning {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 25px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
