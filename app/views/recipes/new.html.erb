@@ -2,7 +2,7 @@
 <span class='recipe_undeline_holder'>
   <%= image_tag 'underline_image', class:'recipe_underline'%>
 </span>
-<%= form_with model: [@user, @recipe], url: user_recipes_path(@user), method: :post, class: 'recipe_entry_form' do |f|%>
+<%= form_with model: [@user, @recipe], url: user_recipes_path(@user), method: :post, class: 'recipe_entry_form' do |f| %>
   <span class='entry'>
     <%= f.label :Title %>
     <%= f.text_field :name, class: 'recipe_field' %>
@@ -10,12 +10,12 @@
 
   <span class='entry timing'>
     <%= f.label 'preparation time(in hours)' %>
-    <%= f.number_field :preparation_time %>
+    <%= f.number_field :preparation_time, step: 1, min: 1 %>
   </span>
 
   <span class='entry timing'>
     <%= f.label 'cooking time(in hours)' %>
-    <%= f.number_field :cooking_time %>
+    <%= f.number_field :cooking_time, step: 1, min: 1 %>
   </span>
 
   <span class='entry'>
