@@ -1,0 +1,58 @@
+.shoppinglist_totals_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  width: 65%;
+  margin: auto;
+  margin-top: 20px;
+  border: 0px;
+  border-left: 10px solid grey;
+  border-right: 10px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+}
+
+.shoppinglist_totals_info h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  font-weight: 600;
+  color: rgb(94, 94, 94);
+}
+
+.shoppinglist_totals_info .bold {
+  font-weight: 600;
+  color: black;
+}
+
+.shopping_list_table_holder {
+  width: 70%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.shopping_list_table {
+  width: 100%;
+  border: 4px solid black;
+}
+
+.table_headings {
+  padding: 5px;
+  height: 35px;
+}
+
+.table_headings .heading {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.shopping_table_data {
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  height: 35px;
+}
+
+.shopping_table_data .shopping_data {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
