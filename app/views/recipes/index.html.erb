@@ -3,7 +3,7 @@
   <%= image_tag 'underline_image', class:'recipe_underline'%>
 </span>
 <span class='new_recipe_button_holder'>
-  <%= link_to 'New Recipe', new_user_recipe_path(@user), class:'new_recipe_link'%>
+  <%= link_to 'New Recipe', new_user_recipe_path(@user), class:'new_recipe_link' %>
 </span>
 <% @recipes.each do |recipe| %>
   <%= render partial: 'shared/recipe_details_v1', locals: {user: @user,recipe: recipe} %>
