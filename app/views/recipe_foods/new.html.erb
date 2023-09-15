@@ -1,0 +1,22 @@
+  <div class='heading'>
+    <h2 class='header_text new_recipe_header_text'>Add New food</h2>
+    <span class='recipe_undeline_holder'>
+      <%= image_tag 'underline_image', class:'recipe_underline'%>
+    </span>
+  </div>
+  <%= form_with model: @recipe_food, url: user_recipe_recipejointfoods_path(@recipe.user, @recipe), method: :post, local: true, class: 'recipe_entry_form food_to_recipe', scope: :recipe_food do |form| %>
+  
+    <span class="entry food_to_recipe_entry">
+      <%= form.label :food_id %>
+      <%= form.collection_select(:food_id, @foods, :id, :name, prompt: "Select a food", required: true) %>
+    </span>
+
+    <span class="entry food_to_recipe_entry">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, required: true, min: 1 %>
+    </span>
+
+    <span class="new_recipe_button_hold">
+      <%= form.submit "Create food", class: 'button new_recipe_submit_button' %>
+    </span>
+  <% end %>

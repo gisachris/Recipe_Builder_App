@@ -1,0 +1,67 @@
+<div class='heading'>
+  <h2 class='header_text new_recipe_header_text'><%= @recipe.name %></h2>
+  <span class='recipe_undeline_holder'>
+    <%= image_tag 'underline_image', class:'recipe_underline'%>
+  </span>
+</div>
+
+<section class='recipe-details'>
+<div class='recipe_info'>
+<p class='preparation_time'>preparation time:  <%=@recipe.preparation_time%></p>
+<p class='cooking_time'>cooking time:  <%=@recipe.cooking_time%> </p>
+<p class='recipe_dets'><%=@recipe.description%></p>
+</div>
+<% if @recipe.user == @user %>
+  <div class='status'>
+    <p>Status: <%= @recipe.public ? 'Public' : 'Private' %></p>
+    <%= form_for @recipe, url: toggle_public_user_recipe_path(@user, @recipe), method: :patch do |f| %>
+    <%= f.hidden_field :public, value: !@recipe.public %>
+    <button type="submit" class="toggle-status-button" style="background-image: url('<%= asset_path(@recipe.public ? 'on-button.png' : 'off-button.png') %>');"></button>
+    <% end %>
+  <div>
+<% end %>
+
+</section>
+
+<%if @recipe.user == current_user%>
+  <section class= 'recipe_show_link_buttons'>
+    <%=link_to 'Generate Shopping list', user_shopping_lists_path, class: 'button btn-addfood'%>
+    <%=link_to 'Add ingredient', new_user_recipe_recipejointfood_path(@user, @recipe), class: 'button btn-addfood'%>
+  </section>
+<% end %>
+<section class= 'recipe-table-section'>
+<%if @recipe_foods.empty?%>
+        <div class='recipe-show-none'>
+            <h2 class='ingredient_warning'>No Ingredient added yet.</h2>
+        </div>
+    <%else%>
+      <div class='recipe_table_section'>
+        <table class='table recipe-table food-table for_sake'>
+          <tr>
+            <th class='table-data'> Food </th>
+            <th class='table-data'> Quantity </th>
+            <th class='table-data'> Value </th>
+            <% if @recipe.user == current_user%>
+               <th class='table-data'> Actions </th>
+            <%end%>
+
+          </tr>
+          <% @recipe_foods.each do |recipe_food| %>
+            <tr >
+                <td class='table-data'><%=recipe_food.food.name%></td>
+                <td class='table-data'><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}"%></td>
+                <td class='table-data'><%= "$#{recipe_food.food.price.to_i * recipe_food.quantity.to_i}"%></td>
+                
+                <% if @recipe.user == current_user %>
+                    <td class='actions_recipe_display'> 
+                      <div class='recipe_actions_holder'>
+                        <%= button_to "Remove", user_recipe_recipejointfood_path(@user, recipe_food.food, recipe_food.id), :method => :delete, class: 'recipe_details_del_button' %>
+                        <%= link_to "Modify", edit_user_recipe_recipejointfood_url(@user, @recipe, recipe_food) %>
+                      </div>
+                    </td>
+                 <%end%>
+            </tr>
+          <%end%>
+        </table>
+    <%end%>
+</section>

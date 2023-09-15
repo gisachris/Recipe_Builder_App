@@ -1,0 +1,77 @@
+.recipe_logo_centered {
+  width: 130px;
+  height: 120px;
+  aspect-ratio: 1/1;
+  margin: 10px;
+  margin-left: 45%;
+}
+
+.recipe_logo {
+  align-self: center;
+  width: 60px;
+  height: 55px;
+  aspect-ratio: 1/1;
+  margin: 10px;
+}
+
+.underline {
+  width: 150px;
+  margin-left: 44.5%;
+}
+
+form {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.field {
+  padding: 10px 0;
+  margin-left: 10px;
+}
+
+.field > input {
+  width: 375px;
+  height: 25px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 3px lightgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.min_value_password {
+  position: relative;
+  right: 110px;
+}
+
+.checkbox {
+  display: flex;
+  margin-left: 36%;
+}
+
+.checkbox > input {
+  text-align: center;
+  width: 20px;
+}
+
+.checkbox > label {
+  text-align: center;
+  align-self: center;
+}
+
+.sign_options {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 10px;
+  font-weight: bolder;
+  justify-content: center;
+}
+
+.sign_options > a {
+  text-decoration: none;
+  color: black;
+}
+
+.sign_options > a:hover {
+  color: darkgreen;
+  border-bottom: 2px solid lightgreen;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="shortcut icon" href="<%= asset_path('header_logo_favicon.ico') %>" type="image/x-icon">
+    <link rel="icon" href="<%= asset_path('header_logo_favicon.ico') %>" type="image/x-icon">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'authorization.css' %>
+    <%= stylesheet_link_tag 'navigation.css' %>
+    <%= stylesheet_link_tag 'user_index.css' %>
+    <%= stylesheet_link_tag 'recipes_index.css' %>
+    <%= stylesheet_link_tag 'recipe_form.css' %>
+    <%= stylesheet_link_tag 'food_form.css' %>
+    <%= stylesheet_link_tag 'foods.css' %>
+    <%= stylesheet_link_tag 'recipe_details.css' %>
+    <%= stylesheet_link_tag 'shopping_list.css' %>
+  </head>
+
+  <body>
+    <% if user_signed_in?%>
+      <nav class='nav_logged_in'>
+        <%= link_to users_path do %>
+          <%= image_tag 'recipe_app_logo.png', alt: 'recipe app logo', class: 'recipe_logo' %>
+        <% end %>      
+        <%= render partial: 'shared/navigation', locals: { user: current_user } %>
+      </nav>
+    <%else%>
+      <nav class='nav_not_logged_in'>
+        <%= image_tag 'recipe_app_logo.png', alt:'recipe app logo', class:'recipe_logo_centered' %>
+      </nav>
+    <%end%>
+    <main class="<%= user_signed_in? && request.path != users_path && request.path != root_path ? 'main_backed' : '' %>">
+      <% if user_signed_in? && request.path != users_path && request.path != root_path%>
+        <div class='outer_shell'>
+        </div>
+        <div class='inner_shell'>
+          <div class='data_hold'>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
+          </div>
+        </div>
+      <% else %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      <% end %>
+    </main>
+  </body>
+</html>

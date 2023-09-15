@@ -1,0 +1,31 @@
+<div class='heading'>
+  <h2 class='header_text new_recipe_header_text'>Add Food</h2>
+  <span class='recipe_undeline_holder'>
+    <%= image_tag 'underline_image', class:'recipe_underline'%>
+  </span>
+</div>
+<%= form_with model: [@user, @food], url: user_foods_path(@user), method: :post, local: true, class: 'recipe_entry_form', scope: :food do |form| %>
+  <span class='entry food_entries'>
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </span>
+
+  <span class='entry'>
+    <%= form.label :measurement_unit %>
+    <%= form.select :measurement_unit, options_for_select(['grams','units','litres']), required: true %>
+  </span>
+
+  <span class='entry timing food_entries'>
+  <%= form.label :price %>
+  <%= form.text_field :price,type: "number", step: "0.001", required: true %>
+  </span>
+
+  <span class='entry timing food_entries'>
+  <%= form.label :quantity %>
+  <%= form.number_field :quantity, required: true, min: 1 %>
+  </span>
+
+  <span class='new_recipe_button_hold'>
+    <%= form.submit "Create food", class: 'button new_recipe_submit_button' %>
+  </span>
+<% end %>

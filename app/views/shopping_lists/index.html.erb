@@ -1,0 +1,44 @@
+<div class='heading'>
+  <h2 class='header_text new_recipe_header_text'>Shopping List</h2>
+  <span class='recipe_undeline_holder'>
+    <%= image_tag 'underline_image', class:'recipe_underline'%>
+  </span>
+</div>
+
+<div class="shoppinglist_totals_info">
+  <h2 class="shoppinglist_total_items">Amount of Food Items To Buy: 
+    <span class='bold'>
+         <%= @total_foods %>
+    </span>
+  </h2>
+  <h2 class="shoppinglist_total_price">Total Value Of Food Needed: 
+    <span class='bold'>
+         $<%= @total_price %>
+    </span>
+  </h2>
+</div>
+
+<div class='shopping_list_table_holder'>
+  <table class='shopping_list_table'>
+    <tbody>
+      <tr class='table_headings'>
+        <th class='heading'>Food</th>
+        <th class='heading'>quantity</th>
+        <th class='heading'>Price</th>
+      </tr>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr class='shopping_table_data'>
+          <th class='shopping_data'>
+            <%= recipe_food.food.name %>
+          </th>
+          <th class='shopping_data'>
+            <%= recipe_food.quantity %><%= recipe_food.food.measurement_unit %>
+          </th>
+          <th class='shopping_data'>
+            $<%= recipe_food.food.price * recipe_food.quantity %>
+          </th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

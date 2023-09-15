@@ -1,0 +1,64 @@
+.btn-addfood {
+  background-color: #5fdf5f;
+  color: black;
+}
+
+.btn-addfood:hover {
+  background-color: #bdbdbd;
+}
+
+.food-table {
+  margin: auto;
+  width: 70%;
+  border: 0.3rem solid #232c2e;
+  border-radius: 5px;
+}
+
+.table-raw {
+  line-height: 2rem;
+  padding: 0.2rem;
+}
+
+table {
+  border-spacing: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+
+tr:first-child {
+  background-color: #232c2e;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d6d6d6;
+}
+
+.table-data {
+  text-align: center;
+  border-right: 0.3rem solid #244d4d;
+}
+
+.table-data:last-child {
+  border-right: none;
+}
+
+.notice {
+  display: flex;
+  align-self: flex-start;
+  color: #244d4d;
+}
+
+.add-food {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  width: 85%;
+  justify-content: flex-end;
+}
+
+.no-foods {
+  color: black;
+  font-weight: 700;
+}

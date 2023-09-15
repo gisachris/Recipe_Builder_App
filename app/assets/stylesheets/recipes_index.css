@@ -1,0 +1,120 @@
+.recipe_header_text {
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  padding-bottom: 2px;
+}
+
+.recipe_undeline_holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.recipe_underline {
+  width: 20%;
+  padding-left: 5px;
+}
+
+.new_recipe_button_holder {
+  display: block;
+  margin: auto;
+  width: 77%;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.new_recipe_link {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #5fdf5f;
+  border: 0;
+  box-shadow: 2px 2px 3px black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+}
+
+.new_recipe_link:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.recipe_holder {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 30px;
+  margin: auto;
+  margin-top: 25px;
+  padding-left: 20px;
+  width: 77%;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: #dfdfdf;
+  box-sizing: border-box;
+}
+
+.recipe_holder > .name_button_section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe_title {
+  margin-top: 25px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+}
+
+.name_button_section > form {
+  width: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.delete_recipe_button {
+  text-align: left;
+}
+
+.delete_recipe_button:hover {
+  background-color: #4ec24e;
+}
+
+.recipe_holder > .description_section {
+  width: 50%;
+  height: 95%;
+  align-self: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+  padding-right: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.63);
+  border-radius: 10px;
+  background-color: rgba(214, 214, 214, 0.699);
+  margin-right: 20px;
+}
+
+.recipe_owner {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  padding: 20px 0;
+}
+
+.public_totals_section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+
+.public_totals_section > span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}

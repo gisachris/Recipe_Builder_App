@@ -1,0 +1,18 @@
+<div class='heading'>
+  <h2 class='header_text new_recipe_header_text'>Edit Recipe Food</h2>
+  <span class='recipe_undeline_holder'>
+    <%= image_tag 'underline_image', class:'recipe_underline'%>
+  </span>
+</div>
+
+<h4 class="current_food_quantity">Current quantity value: <%= @recipe_food.quantity %></h4>
+<%= form_with model: @recipe_food, url: user_recipe_recipejointfood_path(@user, @recipe, @recipe_food), method: :put, class: 'edit_food_form', local: true do |f| %>
+    <span class='entry'>
+        <%= f.label :quantity %>:
+        <%= f.number_field :quantity, min: 0, class: 'quantity_field' %>
+    </span>
+
+    <span class='new_recipe_button_hold'>
+        <%= f.submit 'Update food quantity', class: 'button new_recipe_submit_button' %>
+    </span>
+<% end %>
