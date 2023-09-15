@@ -39,11 +39,11 @@ RSpec.describe 'ShoppingLists', type: :system do
 
   it 'displays the total value of food needed' do
     visit user_shopping_lists_path(@chris)
-    expect(page).to have_content('total value of food needed: 0')
+    expect(page).to have_content('Total Value Of Food Needed: $0')
   end
 
   it 'displays the total number of food items to buy' do
     visit user_shopping_lists_path(@chris)
-    expect(page).to have_content('Amount of food items to buy: 0')
+    expect(page).to have_content('Amount of Food Items To Buy:')
   end
 end

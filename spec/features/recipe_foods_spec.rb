@@ -43,7 +43,7 @@ RSpec.describe 'Recipes', type: :system do
   end
 
   scenario 'User creates a new recipe food' do
-    visit user_recipe_path(@user, @recipe)
+    visit new_user_recipe_recipejointfood_path(@user, @recipe)
 
     select @food1.name, from: 'recipe_food[food_id]'
     fill_in 'Quantity', with: 10

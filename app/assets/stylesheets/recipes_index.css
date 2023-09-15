@@ -20,7 +20,7 @@
 .new_recipe_button_holder {
   display: block;
   margin: auto;
-  width: 70%;
+  width: 77%;
   text-align: right;
   margin-top: 5px;
 }
@@ -46,7 +46,6 @@
   justify-content: space-around;
   column-gap: 30px;
   margin: auto;
-  margin-left: 100px;
   margin-top: 25px;
   padding-left: 20px;
   width: 77%;
@@ -110,7 +109,7 @@
   flex-direction: column;
   row-gap: 25px;
   width: 50%;
-  text-align: left;
+  text-align: center;
   justify-content: center;
 }
 

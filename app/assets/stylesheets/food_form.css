@@ -8,3 +8,8 @@
 .food_entries {
   margin-left: 40px;
 }
+
+.form-container {
+  border: 0;
+  background-color: transparent;
+}

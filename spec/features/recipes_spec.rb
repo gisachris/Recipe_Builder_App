@@ -40,7 +40,8 @@ RSpec.describe 'Recipes', type: :system do
     end
 
   it 'When I click on a recipe, it takes me to the details' do
-    visit user_recipe_path(@user, @recipe1)
-    expect(page).to have_current_path(user_recipe_path(@recipe1))
+    visit user_recipes_path(@user)
+    click_on 'Pasta'
+    expect(page).to have_current_path(user_recipe_path(@user, @recipe1))
   end
 end
