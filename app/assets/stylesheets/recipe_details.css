@@ -2,14 +2,14 @@
   display: flex;
   align-items: first baseline;
   justify-content: space-between;
-  width: 70%;
+  width: 85%;
+  margin: auto;
   margin-bottom: 2rem;
   margin-top: 15px;
 }
 
 .recipe_info {
   width: 50%;
-  margin-left: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: medium;
   font-weight: 900;
@@ -63,14 +63,25 @@
 }
 
 .recipe_show_link_buttons {
-  width: 70%;
+  width: 85%;
   display: flex;
   margin: auto;
   justify-content: space-between;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
 }
 
 .recipe_table_section {
   margin-top: 15px;
+}
+
+.for_sake {
+  width: 85%;
 }
 
 .actions_recipe_display {

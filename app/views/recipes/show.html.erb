@@ -9,7 +9,7 @@
 <div class='recipe_info'>
 <p class='preparation_time'>preparation time:  <%=@recipe.preparation_time%></p>
 <p class='cooking_time'>cooking time:  <%=@recipe.cooking_time%> </p>
-<p class='recipe_dets'><%=@recipe.description%><p>
+<p class='recipe_dets'><%=@recipe.description%></p>
 </div>
 <% if @recipe.user == @user %>
   <div class='status'>
@@ -36,7 +36,7 @@
         </div>
     <%else%>
       <div class='recipe_table_section'>
-        <table class='table recipe-table food-table'>
+        <table class='table recipe-table food-table for_sake'>
           <tr>
             <th class='table-data'> Food </th>
             <th class='table-data'> Quantity </th>
@@ -55,7 +55,7 @@
                 <% if @recipe.user == current_user %>
                     <td class='actions_recipe_display'> 
                       <div class='recipe_actions_holder'>
-                        <%= button_to "Delete", user_recipe_recipejointfood_path(@user, recipe_food.food, recipe_food.id), :method => :delete, class: 'recipe_details_del_button' %>
+                        <%= button_to "Remove", user_recipe_recipejointfood_path(@user, recipe_food.food, recipe_food.id), :method => :delete, class: 'recipe_details_del_button' %>
                         <%= link_to "Modify", edit_user_recipe_recipejointfood_url(@user, @recipe, recipe_food) %>
                       </div>
                     </td>
